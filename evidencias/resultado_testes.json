@@ -1,0 +1,150 @@
+{
+  "executado_em": "2026-08-24T21:58:11.995367+00:00",
+  "total": 9,
+  "aprovados": 9,
+  "testes": [
+    {
+      "teste": "Login do Administrador",
+      "metodo": "POST",
+      "endpoint": "/login",
+      "esperado": 200,
+      "obtido": 200,
+      "resultado": "PASSOU",
+      "resposta": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwibm9tZSI6IkFkbWluaXN0cmFkb3IiLCJlbWFpbCI6ImFkbWluQGRlbW8uY29tIiwicGVyZmlsIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTc4NzYwODY5MSwiZXhwIjoxNzg3NjEyMjkxfQ.Gxz5VkOHnw5Hx3JcZaotndAjGMJgy9_XJD9qMUy8iUg",
+        "token_type": "bearer",
+        "expires_in": 3600,
+        "usuario": {
+          "id": 1,
+          "nome": "Administrador",
+          "email": "admin@demo.com",
+          "perfil": "Administrador"
+        }
+      }
+    },
+    {
+      "teste": "Listagem de usuários pelo Administrador",
+      "metodo": "GET",
+      "endpoint": "/usuarios",
+      "esperado": 200,
+      "obtido": 200,
+      "resultado": "PASSOU",
+      "resposta": [
+        {
+          "id": 1,
+          "nome": "Administrador",
+          "email": "admin@demo.com",
+          "perfil": "Administrador"
+        },
+        {
+          "id": 2,
+          "nome": "Olivia Operadora",
+          "email": "operador@demo.com",
+          "perfil": "Operador"
+        },
+        {
+          "id": 3,
+          "nome": "Carlos Cliente Atualizado",
+          "email": "cliente@demo.com",
+          "perfil": "Cliente"
+        }
+      ]
+    },
+    {
+      "teste": "Login do Operador",
+      "metodo": "POST",
+      "endpoint": "/login",
+      "esperado": 200,
+      "obtido": 200,
+      "resultado": "PASSOU",
+      "resposta": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwibm9tZSI6Ik9saXZpYSBPcGVyYWRvcmEiLCJlbWFpbCI6Im9wZXJhZG9yQGRlbW8uY29tIiwicGVyZmlsIjoiT3BlcmFkb3IiLCJpYXQiOjE3ODc2MDg2OTEsImV4cCI6MTc4NzYxMjI5MX0.hJNi6F6kpBKkR1b_0RUjkwoj8Kl0Csz0V2R9BQFGvsA",
+        "token_type": "bearer",
+        "expires_in": 3600,
+        "usuario": {
+          "id": 2,
+          "nome": "Olivia Operadora",
+          "email": "operador@demo.com",
+          "perfil": "Operador"
+        }
+      }
+    },
+    {
+      "teste": "Bloqueio de exclusão para Operador",
+      "metodo": "DELETE",
+      "endpoint": "/usuarios/3",
+      "esperado": 403,
+      "obtido": 403,
+      "resultado": "PASSOU",
+      "resposta": {
+        "detail": "Usuário sem permissão para esta operação."
+      }
+    },
+    {
+      "teste": "Bloqueio de alteração de perfil para Operador",
+      "metodo": "PUT",
+      "endpoint": "/usuarios/3",
+      "esperado": 403,
+      "obtido": 403,
+      "resultado": "PASSOU",
+      "resposta": {
+        "detail": "Operador não pode alterar perfis de acesso."
+      }
+    },
+    {
+      "teste": "Login do Cliente",
+      "metodo": "POST",
+      "endpoint": "/login",
+      "esperado": 200,
+      "obtido": 200,
+      "resultado": "PASSOU",
+      "resposta": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwibm9tZSI6IkNhcmxvcyBDbGllbnRlIEF0dWFsaXphZG8iLCJlbWFpbCI6ImNsaWVudGVAZGVtby5jb20iLCJwZXJmaWwiOiJDbGllbnRlIiwiaWF0IjoxNzg3NjA4NjkxLCJleHAiOjE3ODc2MTIyOTF9.uB4u-72AQ8aWoJQ83MMcS3M64YmKwuBNsPS676WFd1M",
+        "token_type": "bearer",
+        "expires_in": 3600,
+        "usuario": {
+          "id": 3,
+          "nome": "Carlos Cliente Atualizado",
+          "email": "cliente@demo.com",
+          "perfil": "Cliente"
+        }
+      }
+    },
+    {
+      "teste": "Bloqueio de listagem para Cliente",
+      "metodo": "GET",
+      "endpoint": "/usuarios",
+      "esperado": 403,
+      "obtido": 403,
+      "resultado": "PASSOU",
+      "resposta": {
+        "detail": "Usuário sem permissão para esta operação."
+      }
+    },
+    {
+      "teste": "Consulta dos próprios dados pelo Cliente",
+      "metodo": "GET",
+      "endpoint": "/me",
+      "esperado": 200,
+      "obtido": 200,
+      "resultado": "PASSOU",
+      "resposta": {
+        "id": 3,
+        "nome": "Carlos Cliente Atualizado",
+        "email": "cliente@demo.com",
+        "perfil": "Cliente"
+      }
+    },
+    {
+      "teste": "Endpoint de saúde da API",
+      "metodo": "GET",
+      "endpoint": "/health",
+      "esperado": 200,
+      "obtido": 200,
+      "resultado": "PASSOU",
+      "resposta": {
+        "status": "ok"
+      }
+    }
+  ]
+}

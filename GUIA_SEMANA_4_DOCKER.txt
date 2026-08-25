@@ -1,0 +1,34 @@
+ATIVIDADE SEMANA 4 - DOCKER
+
+ARQUIVOS ADICIONADOS/ATUALIZADOS:
+- Dockerfile
+- .dockerignore
+- requirements.txt (incluído bcrypt, necessário para autenticação)
+- README.md (instruções Docker)
+
+COMANDOS NO WINDOWS/POWERSHELL:
+
+1) Entrar na pasta do projeto:
+cd caminho\para\projeto_api_gestao_usuarios
+
+2) Criar imagem:
+docker build -t api-gestao-usuarios .
+
+3) Executar:
+docker run -d --name api-gestao-usuarios -p 8000:8000 api-gestao-usuarios
+
+4) Testar no navegador:
+http://localhost:8000
+http://localhost:8000/docs
+http://localhost:8000/health
+
+5) Comprovar que o container está rodando:
+docker ps
+
+PRINTS EXIGIDOS NESTA ETAPA:
+- Terminal mostrando docker ps com o container api-gestao-usuarios em execução.
+- GitHub aberto no Dockerfile, com a URL do repositório visível.
+
+IMPORTANTE:
+- Faça commit e push do Dockerfile para a branch main.
+- O repositório deve ser público para o professor conseguir acessar.

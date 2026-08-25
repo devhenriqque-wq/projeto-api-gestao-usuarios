@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Usuários</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="topo">
+      <div>
+        <p class="tag">API REST SEGURA</p>
+        <h1>Gestão de Usuários</h1>
+        <p class="subtitulo">Autenticação JWT e controle de acesso RBAC</p>
+      </div>
+      <button id="btnLogout" class="btn btn-secundario oculto">Sair</button>
+    </header>
+
+    <section id="alerta" class="alerta oculto"></section>
+
+    <section id="telaLogin" class="card login-card">
+      <h2>Entrar no sistema</h2>
+      <p>Utilize seu e-mail e senha para receber um token JWT.</p>
+
+      <form id="formLogin">
+        <label for="loginEmail">E-mail</label>
+        <input id="loginEmail" type="email" value="admin@demo.com" required>
+
+        <label for="loginSenha">Senha</label>
+        <input id="loginSenha" type="password" value="Admin@123" required>
+
+        <button class="btn" type="submit">Entrar</button>
+      </form>
+
+      <div class="credencial">
+        <strong>Acesso inicial:</strong>
+        admin@demo.com / Admin@123
+      </div>
+    </section>
+
+    <section id="painel" class="oculto">
+      <div class="grade-resumo">
+        <article class="card">
+          <span>Usuário autenticado</span>
+          <strong id="nomeAtual">-</strong>
+        </article>
+        <article class="card">
+          <span>Perfil</span>
+          <strong id="perfilAtual">-</strong>
+        </article>
+        <article class="card">
+          <span>Status do token</span>
+          <strong>JWT ativo</strong>
+        </article>
+      </div>
+
+      <section id="areaCliente" class="card oculto">
+        <h2>Meus dados</h2>
+        <div id="dadosCliente"></div>
+      </section>
+
+      <section id="areaGestao" class="oculto">
+        <div class="acoes">
+          <h2>Usuários cadastrados</h2>
+          <button id="btnNovo" class="btn">Novo usuário</button>
+        </div>
+
+        <div class="card tabela-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Perfil</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="corpoTabela"></tbody>
+          </table>
+        </div>
+
+        <section id="formCard" class="card oculto">
+          <h2 id="tituloForm">Cadastrar usuário</h2>
+
+          <form id="formUsuario">
+            <input id="usuarioId" type="hidden">
+
+            <div class="grid-form">
+              <div>
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" minlength="2" required>
+              </div>
+
+              <div>
+                <label for="email">E-mail</label>
+                <input id="email" type="email" required>
+              </div>
+
+              <div>
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" minlength="8">
+                <small id="ajudaSenha">Mínimo de 8 caracteres.</small>
+              </div>
+
+              <div>
+                <label for="perfil">Perfil</label>
+                <select id="perfil">
+                  <option>Administrador</option>
+                  <option>Operador</option>
+                  <option>Cliente</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="botoes-form">
+              <button class="btn" type="submit">Salvar</button>
+              <button id="btnCancelar" class="btn btn-secundario" type="button">Cancelar</button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

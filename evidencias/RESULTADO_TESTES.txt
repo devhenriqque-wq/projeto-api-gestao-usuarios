@@ -1,0 +1,40 @@
+RELATÓRIO DE TESTES FUNCIONAIS DA API
+
+Total de testes: 9
+Aprovados: 9
+
+1. Login do Administrador
+   POST /login
+   Esperado: HTTP 200 | Obtido: HTTP 200 | PASSOU
+
+2. Listagem de usuários pelo Administrador
+   GET /usuarios
+   Esperado: HTTP 200 | Obtido: HTTP 200 | PASSOU
+
+3. Login do Operador
+   POST /login
+   Esperado: HTTP 200 | Obtido: HTTP 200 | PASSOU
+
+4. Bloqueio de exclusão para Operador
+   DELETE /usuarios/3
+   Esperado: HTTP 403 | Obtido: HTTP 403 | PASSOU
+
+5. Bloqueio de alteração de perfil para Operador
+   PUT /usuarios/3
+   Esperado: HTTP 403 | Obtido: HTTP 403 | PASSOU
+
+6. Login do Cliente
+   POST /login
+   Esperado: HTTP 200 | Obtido: HTTP 200 | PASSOU
+
+7. Bloqueio de listagem para Cliente
+   GET /usuarios
+   Esperado: HTTP 403 | Obtido: HTTP 403 | PASSOU
+
+8. Consulta dos próprios dados pelo Cliente
+   GET /me
+   Esperado: HTTP 200 | Obtido: HTTP 200 | PASSOU
+
+9. Endpoint de saúde da API
+   GET /health
+   Esperado: HTTP 200 | Obtido: HTTP 200 | PASSOU

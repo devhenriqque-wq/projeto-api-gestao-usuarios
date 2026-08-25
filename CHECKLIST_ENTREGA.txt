@@ -1,0 +1,25 @@
+CHECKLIST DE ENTREGA
+
+[OK] Código-fonte do back-end
+[OK] Código-fonte do front-end
+[OK] CRUD de usuários
+[OK] Login com e-mail e senha
+[OK] Geração de JWT
+[OK] Proteção dos endpoints
+[OK] Perfis Administrador, Operador e Cliente
+[OK] Controle de acesso RBAC
+[OK] Hash de senhas com bcrypt
+[OK] Documentação dos endpoints
+[OK] Explicação do JWT
+[OK] Explicação do RBAC
+[OK] Explicação do OAuth 2.0
+[OK] Análise de riscos de segurança
+[OK] README com instalação, execução e testes
+[OK] Interface web funcional
+[OK] Evidências em capturas de tela
+[OK] Relatório de testes funcionais (9/9 aprovados)
+
+Usuários de demonstração:
+Administrador: admin@demo.com / Admin@123
+Operador: operador@demo.com / Operador@123
+Cliente: cliente@demo.com / Cliente@123
