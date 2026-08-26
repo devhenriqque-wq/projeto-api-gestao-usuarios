@@ -8,7 +8,7 @@ CHECKLIST DE ENTREGA
 [OK] Proteção dos endpoints
 [OK] Perfis Administrador, Operador e Cliente
 [OK] Controle de acesso RBAC
-[OK] Hash de senhas com bcrypt
+[OK] Hash de senhas com PBKDF2-HMAC-SHA256
 [OK] Documentação dos endpoints
 [OK] Explicação do JWT
 [OK] Explicação do RBAC
@@ -19,7 +19,8 @@ CHECKLIST DE ENTREGA
 [OK] Evidências em capturas de tela
 [OK] Relatório de testes funcionais (9/9 aprovados)
 
-Usuários de demonstração:
+Usuário inicial para demonstração:
 Administrador: admin@demo.com / Admin@123
-Operador: operador@demo.com / Operador@123
-Cliente: cliente@demo.com / Cliente@123
+
+O banco de dados é criado localmente na primeira execução e não é versionado no repositório.
+Os usuários Operador e Cliente podem ser cadastrados pelo Administrador durante a demonstração.
