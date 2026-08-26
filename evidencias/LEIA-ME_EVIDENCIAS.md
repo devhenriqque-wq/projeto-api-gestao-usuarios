@@ -18,8 +18,10 @@ As evidências desta pasta registram a interface e os testes realizados na aplic
 
 Foram executados 9 testes principais e todos foram aprovados, incluindo login, geração/uso de autenticação, listagem protegida, restrições de RBAC e consulta dos próprios dados pelo Cliente.
 
-## Usuários de demonstração incluídos no banco
+## Usuário inicial para demonstração
+
+O banco de dados local não é versionado no repositório. Na primeira execução, a aplicação cria automaticamente o banco de dados e o usuário Administrador inicial.
 
 - Administrador: `admin@demo.com` / `Admin@123`
-- Operador: `operador@demo.com` / `Operador@123`
-- Cliente: `cliente@demo.com` / `Cliente@123`
+
+Os usuários com perfis Operador e Cliente podem ser cadastrados pelo Administrador durante a demonstração da aplicação.
