@@ -65,13 +65,17 @@ Depois acesse:
 
 ## 4. Usuários para demonstração
 
-O projeto entregue inclui um banco de demonstração com:
+O banco de dados local não é versionado no repositório por segurança.
+
+Na primeira execução, a aplicação cria automaticamente o banco de dados e o usuário Administrador inicial.
+
+Credenciais padrão para demonstração:
 
 - Administrador: `admin@demo.com` / `Admin@123`
-- Operador: `operador@demo.com` / `Operador@123`
-- Cliente: `cliente@demo.com` / `Cliente@123`
 
-Caso o banco seja removido, a aplicação cria automaticamente o Administrador na primeira execução. Os dados do administrador podem ser alterados por variáveis de ambiente conforme o arquivo `.env.example`.
+Os dados do Administrador podem ser configurados por variáveis de ambiente conforme o arquivo `.env.example`.
+
+Os usuários com perfis Operador e Cliente podem ser cadastrados pelo Administrador durante a demonstração da aplicação.
 
 ## 5. Perfis de acesso
 
