@@ -32,8 +32,10 @@ jobs:
           python -c "from app.main import app; print('API carregada com sucesso')"
 
       - name: Executar testes unitarios
+        env:
+          PYTHONPATH: .
         run: |
-          pytest -v
+          python -m pytest -v
 
   CD:
     needs: CI
